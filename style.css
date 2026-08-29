@@ -734,3 +734,100 @@ body.dark-mode .price-card p {
 #resume .minimal-template .resume-name h1 {
     color: #333 !important;
 }
+/* ================================
+   RESUME INNER THEMES
+================================ */
+
+/* CLASSIC */
+#resume .classic-template {
+    background: #ffffff !important;
+    color: #222 !important;
+}
+
+#resume .classic-template section h2 {
+    color: #222 !important;
+    border-color: #222 !important;
+}
+
+
+/* MODERN */
+#resume .modern-template {
+    background: #f4f8ff !important;
+    color: #172033 !important;
+}
+
+#resume .modern-template section h2 {
+    color: #2563eb !important;
+    border-color: #2563eb !important;
+}
+
+#resume .modern-template .resume-name h1 {
+    color: #2563eb !important;
+}
+
+
+/* PROFESSIONAL */
+#resume .professional-template {
+    background: #f3f5f8 !important;
+    color: #172033 !important;
+}
+
+#resume .professional-template section h2 {
+    color: #172033 !important;
+    border-color: #172033 !important;
+}
+
+#resume .professional-template .resume-name h1 {
+    color: #172033 !important;
+}
+
+
+/* CREATIVE */
+#resume .creative-template {
+    background: #faf5ff !important;
+    color: #302044 !important;
+}
+
+#resume .creative-template section h2 {
+    color: #7c3aed !important;
+    border-color: #a855f7 !important;
+}
+
+#resume .creative-template .resume-name h1 {
+    color: #7c3aed !important;
+}
+
+
+/* MINIMAL */
+#resume .minimal-template {
+    background: #ffffff !important;
+    color: #333 !important;
+}
+
+#resume .minimal-template section h2 {
+    color: #555 !important;
+    border-color: #ddd !important;
+}
+
+#resume .minimal-template .resume-name h1 {
+    color: #333 !important;
+}
+
+
+/* DARK MODE */
+body.dark-mode #resume .resume-card {
+    color: #eeeeee !important;
+}
+
+body.dark-mode #resume .classic-template,
+body.dark-mode #resume .modern-template,
+body.dark-mode #resume .professional-template,
+body.dark-mode #resume .creative-template,
+body.dark-mode #resume .minimal-template {
+    background: #20252d !important;
+}
+
+body.dark-mode #resume .resume-card section h2 {
+    color: #55a0ff !important;
+    border-color: #414856 !important;
+}
