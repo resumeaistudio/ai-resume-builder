@@ -1,9 +1,13 @@
 /* ==========================================
-   RESUMEAI - MAIN STYLE
+   RESUMEAI - COMPLETE STYLE
 ========================================== */
 
 * {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -11,7 +15,8 @@ body {
     padding: 25px 15px;
     font-family: Arial, Helvetica, sans-serif;
     background: #f2f4f8;
-    color: #222;
+    color: #111111;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -19,27 +24,35 @@ body {
     max-width: 1000px;
     margin: auto;
     padding: 30px;
-    background: white;
+    background: #ffffff;
+    color: #111111;
     border-radius: 18px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
 }
+
+
+/* ==========================================
+   TITLE
+========================================== */
 
 .container > h1 {
     text-align: center;
-    margin-bottom: 8px;
+    margin: 0 0 8px;
     font-size: 38px;
+    color: #111111;
 }
 
 .intro {
     text-align: center;
-    color: #666;
-    margin-top: 0;
+    margin: 0;
+    color: #555555;
 }
 
 .date-info {
     text-align: center;
     margin: 18px 0 25px;
     font-weight: bold;
+    color: #222222;
 }
 
 
@@ -50,13 +63,15 @@ body {
 .form-section {
     margin-bottom: 25px;
     padding: 20px;
-    border: 1px solid #e1e5eb;
-    border-radius: 12px;
     background: #fafbfc;
+    color: #111111;
+    border: 1px solid #dfe3e8;
+    border-radius: 12px;
 }
 
 .form-section h2 {
-    margin-top: 0;
+    margin: 0 0 12px;
+    color: #111111;
     font-size: 20px;
 }
 
@@ -66,10 +81,17 @@ select {
     width: 100%;
     margin: 8px 0;
     padding: 13px;
-    border: 1px solid #ccd2da;
+    background: #ffffff;
+    color: #111111;
+    border: 1px solid #c9cfd8;
     border-radius: 8px;
     font-size: 15px;
     font-family: inherit;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #777777;
 }
 
 textarea {
@@ -91,15 +113,17 @@ button {
     border-radius: 8px;
     padding: 12px 18px;
     margin: 6px 4px 6px 0;
+    background: #2563eb;
+    color: #ffffff;
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;
-    background: #2563eb;
-    color: white;
+    transition: 0.2s;
 }
 
 button:hover {
     opacity: 0.9;
+    transform: translateY(-1px);
 }
 
 .controls {
@@ -114,9 +138,10 @@ button:hover {
 .premium-box {
     margin-top: 30px;
     padding: 25px;
+    background: #faf5ff;
+    color: #222222;
     border: 2px solid #a855f7;
     border-radius: 16px;
-    background: #faf5ff;
 }
 
 .premium-box h2 {
@@ -125,16 +150,13 @@ button:hover {
 }
 
 .premium-box > p {
-    color: #555;
-}
-
-.premium-features {
-    margin: 20px 0;
+    color: #555555;
 }
 
 .premium-features p {
     margin: 8px 0;
     padding: 9px;
+    color: #333333;
     border-bottom: 1px solid #eadcf7;
 }
 
@@ -148,18 +170,24 @@ button:hover {
     flex: 1;
     padding: 20px;
     text-align: center;
-    background: white;
-    border: 1px solid #ddd;
+    background: #ffffff;
+    color: #222222;
+    border: 1px solid #dddddd;
     border-radius: 12px;
 }
 
+.price-card h3 {
+    color: #222222;
+}
+
 .price-card h2 {
+    color: #222222;
     font-size: 30px;
     margin: 10px 0;
 }
 
 .price-card p {
-    color: #666;
+    color: #666666;
 }
 
 .price-card button {
@@ -176,7 +204,7 @@ button:hover {
     padding: 5px 10px;
     border-radius: 20px;
     background: #a855f7;
-    color: white;
+    color: #ffffff;
     font-size: 12px;
     font-weight: bold;
 }
@@ -189,6 +217,7 @@ button:hover {
 .preview-title {
     text-align: center;
     margin-top: 40px;
+    color: #111111;
 }
 
 #resume {
@@ -198,17 +227,26 @@ button:hover {
 
 
 /* ==========================================
-   RESUME CARD BASE
+   RESUME BASE
 ========================================== */
 
-.resume-card {
+#resume .resume-card {
     width: 100%;
     min-height: 900px;
     padding: 40px;
+    background: #ffffff;
+    color: #111111;
     border-radius: 14px;
+    border: 1px solid #cccccc;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-    overflow: hidden;
-    transition: 0.3s;
+    opacity: 1;
+    filter: none;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+#resume .resume-card * {
+    opacity: 1;
+    filter: none;
 }
 
 .resume-header {
@@ -218,14 +256,21 @@ button:hover {
     margin-bottom: 30px;
 }
 
+.resume-photo {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
 .resume-name h1 {
     margin: 0 0 8px;
-    font-size: 36px;
+    font-size: 38px;
 }
 
 .resume-name h3 {
     margin: 0 0 10px;
-    font-size: 20px;
+    font-size: 21px;
 }
 
 .resume-name p {
@@ -262,40 +307,50 @@ button:hover {
 
 
 /* ==========================================
-   CLASSIC TEMPLATE
+   CLASSIC
 ========================================== */
 
 #resume .classic-template {
     background: #ffffff !important;
-    color: #222;
-    border: 1px solid #333;
+    color: #111111 !important;
+    border: 1px solid #333333 !important;
 }
 
 #resume .classic-template .resume-header {
-    background: #f0f0f0;
+    background: #eeeeee !important;
+    color: #111111 !important;
     padding: 25px;
-    border-left: 6px solid #333;
+    border-left: 6px solid #333333;
+}
+
+#resume .classic-template .resume-name h1,
+#resume .classic-template .resume-name h3,
+#resume .classic-template .resume-name p,
+#resume .classic-template section p,
+#resume .classic-template section li,
+#resume .classic-template strong {
+    color: #111111 !important;
 }
 
 #resume .classic-template section h2 {
-    color: #222;
-    border-color: #333;
+    color: #111111 !important;
+    border-color: #333333 !important;
 }
 
 
 /* ==========================================
-   MODERN TEMPLATE
+   MODERN
 ========================================== */
 
 #resume .modern-template {
     background: #eaf2ff !important;
-    color: #172033;
-    border: 3px solid #2563eb;
+    color: #111111 !important;
+    border: 3px solid #2563eb !important;
 }
 
 #resume .modern-template .resume-header {
-    background: #2563eb;
-    color: white;
+    background: #2563eb !important;
+    color: #ffffff !important;
     padding: 30px;
     border-radius: 10px;
 }
@@ -303,68 +358,82 @@ button:hover {
 #resume .modern-template .resume-name h1,
 #resume .modern-template .resume-name h3,
 #resume .modern-template .resume-name p {
-    color: white;
+    color: #ffffff !important;
 }
 
 #resume .modern-template section {
-    background: rgba(255, 255, 255, 0.9);
+    background: #ffffff !important;
+    color: #111111 !important;
     padding: 18px;
     border-radius: 10px;
 }
 
 #resume .modern-template section h2 {
-    color: #2563eb;
-    border-color: #2563eb;
+    color: #2563eb !important;
+    border-color: #2563eb !important;
+}
+
+#resume .modern-template section p,
+#resume .modern-template section li,
+#resume .modern-template strong {
+    color: #111111 !important;
 }
 
 
 /* ==========================================
-   PROFESSIONAL TEMPLATE
+   PROFESSIONAL
 ========================================== */
 
 #resume .professional-template {
     background: #eef1f5 !important;
-    color: #172033;
-    border: 3px solid #1f2937;
+    color: #111111 !important;
+    border: 3px solid #1f2937 !important;
 }
 
 #resume .professional-template .resume-header {
-    background: #1f2937;
-    color: white;
+    background: #1f2937 !important;
+    color: #ffffff !important;
     padding: 30px;
 }
 
 #resume .professional-template .resume-name h1,
 #resume .professional-template .resume-name h3,
 #resume .professional-template .resume-name p {
-    color: white;
+    color: #ffffff !important;
 }
 
 #resume .professional-template section {
-    background: white;
+    background: #ffffff !important;
+    color: #111111 !important;
     padding: 18px;
 }
 
 #resume .professional-template section h2 {
-    color: #1f2937;
-    border-color: #1f2937;
+    color: #1f2937 !important;
+    border-color: #1f2937 !important;
+}
+
+#resume .professional-template section p,
+#resume .professional-template section li,
+#resume .professional-template strong {
+    color: #111111 !important;
 }
 
 
 /* ==========================================
-   CREATIVE TEMPLATE
+   CREATIVE
 ========================================== */
 
 #resume .creative-template {
     background: #f7edff !important;
-    color: #302044;
-    border: 3px solid #9333ea;
+    color: #111111 !important;
+    border: 3px solid #9333ea !important;
     border-radius: 22px;
 }
 
 #resume .creative-template .resume-header {
-    background: #9333ea;
-    color: white;
+    background: #9333ea !important;
+    color: #ffffff !important;
     padding: 30px;
     border-radius: 15px;
 }
@@ -372,133 +441,205 @@ button:hover {
 #resume .creative-template .resume-name h1,
 #resume .creative-template .resume-name h3,
 #resume .creative-template .resume-name p {
-    color: white;
+    color: #ffffff !important;
 }
 
 #resume .creative-template section {
-    background: white;
+    background: #ffffff !important;
+    color: #111111 !important;
     padding: 18px;
     border-radius: 12px;
 }
 
 #resume .creative-template section h2 {
-    color: #9333ea;
-    border-color: #a855f7;
+    color: #9333ea !important;
+    border-color: #a855f7 !important;
+}
+
+#resume .creative-template section p,
+#resume .creative-template section li,
+#resume .creative-template strong {
+    color: #111111 !important;
 }
 
 
 /* ==========================================
-   MINIMAL TEMPLATE
+   MINIMAL
 ========================================== */
 
 #resume .minimal-template {
     background: #fafafa !important;
-    color: #333;
-    border: none;
-    box-shadow: none;
+    color: #111111 !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 #resume .minimal-template .resume-header {
-    background: #fafafa;
+    background: #fafafa !important;
+    color: #111111 !important;
     padding: 15px 0;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #dddddd;
+}
+
+#resume .minimal-template .resume-name h1,
+#resume .minimal-template .resume-name h3,
+#resume .minimal-template .resume-name p,
+#resume .minimal-template section p,
+#resume .minimal-template section li,
+#resume .minimal-template strong {
+    color: #111111 !important;
 }
 
 #resume .minimal-template section h2 {
-    color: #555;
-    border-color: #ddd;
+    color: #555555 !important;
+    border-color: #dddddd !important;
 }
 
 
 /* ==========================================
-   DARK MODE
+   DARK MODE - ENTIRE WEBSITE
 ========================================== */
 
 body.dark-mode {
-    background: #111827;
-    color: #eee;
+    background: #080b10 !important;
+    color: #ffffff !important;
 }
 
 body.dark-mode .container {
-    background: #1f2937;
-    color: #eee;
+    background: #151a21 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .container > h1,
+body.dark-mode .intro,
+body.dark-mode .date-info {
+    color: #ffffff !important;
 }
 
 body.dark-mode .form-section {
-    background: #18212d;
-    border-color: #374151;
+    background: #1b222c !important;
+    color: #ffffff !important;
+    border-color: #374151 !important;
+}
+
+body.dark-mode .form-section h2 {
+    color: #ffffff !important;
 }
 
 body.dark-mode input,
 body.dark-mode textarea,
 body.dark-mode select {
-    background: #111827;
-    color: #eee;
-    border-color: #4b5563;
+    background: #0d1219 !important;
+    color: #ffffff !important;
+    border-color: #4b5563 !important;
 }
 
-body.dark-mode .intro,
-body.dark-mode .date-info {
-    color: #ddd;
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+    color: #9ca3af !important;
 }
 
 
-/* Dark resume themes */
+/* ==========================================
+   DARK MODE - RESUME
+========================================== */
 
-body.dark-mode #resume .classic-template {
-    background: #252525 !important;
-    color: #eee;
-}
-
-body.dark-mode #resume .modern-template {
-    background: #172554 !important;
-    color: #eee;
-}
-
-body.dark-mode #resume .professional-template {
-    background: #1e293b !important;
-    color: #eee;
-}
-
-body.dark-mode #resume .creative-template {
-    background: #3b1f4a !important;
-    color: #eee;
-}
-
+body.dark-mode #resume .resume-card,
+body.dark-mode #resume .classic-template,
+body.dark-mode #resume .modern-template,
+body.dark-mode #resume .professional-template,
+body.dark-mode #resume .creative-template,
 body.dark-mode #resume .minimal-template {
-    background: #252525 !important;
-    color: #eee;
+    background: #171b22 !important;
+    color: #ffffff !important;
+    opacity: 1 !important;
+    filter: none !important;
 }
 
 
-/* Premium dark mode */
+/* Every resume text WHITE in dark mode */
+
+body.dark-mode #resume .resume-card h1,
+body.dark-mode #resume .resume-card h2,
+body.dark-mode #resume .resume-card h3,
+body.dark-mode #resume .resume-card p,
+body.dark-mode #resume .resume-card li,
+body.dark-mode #resume .resume-card strong,
+body.dark-mode #resume .resume-card span {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+
+/* Section headings */
+
+body.dark-mode #resume .resume-card section h2 {
+    color: #7db4ff !important;
+    border-color: #5b6575 !important;
+}
+
+
+/* Header stays themed */
+
+body.dark-mode #resume .modern-template .resume-header {
+    background: #1d4ed8 !important;
+}
+
+body.dark-mode #resume .professional-template .resume-header {
+    background: #111827 !important;
+}
+
+body.dark-mode #resume .creative-template .resume-header {
+    background: #7e22ce !important;
+}
+
+body.dark-mode #resume .classic-template .resume-header {
+    background: #292d33 !important;
+}
+
+body.dark-mode #resume .minimal-template .resume-header {
+    background: #171b22 !important;
+}
+
+
+/* Links */
+
+body.dark-mode #resume .resume-card a {
+    color: #7db4ff !important;
+    opacity: 1 !important;
+}
+
+
+/* ==========================================
+   DARK MODE - PREMIUM
+========================================== */
 
 body.dark-mode .premium-box {
-    background: #251c31;
-    color: white;
-    border-color: #a86cff;
+    background: #21182b !important;
+    color: #ffffff !important;
+    border-color: #a855f7 !important;
 }
 
-body.dark-mode .premium-box h2 {
-    color: #c084fc;
-}
-
-body.dark-mode .premium-box > p {
-    color: #ddd;
+body.dark-mode .premium-box h2,
+body.dark-mode .premium-box > p,
+body.dark-mode .premium-features p {
+    color: #ffffff !important;
 }
 
 body.dark-mode .premium-features p {
-    border-color: #4b3b5d;
+    border-color: #4b3b5d !important;
 }
 
 body.dark-mode .price-card {
-    background: #20252d;
-    color: white;
-    border-color: #414856;
+    background: #1b222c !important;
+    color: #ffffff !important;
+    border-color: #4b5563 !important;
 }
 
+body.dark-mode .price-card h3,
+body.dark-mode .price-card h2,
 body.dark-mode .price-card p {
-    color: #bbb;
+    color: #ffffff !important;
 }
 
 
@@ -509,7 +650,8 @@ body.dark-mode .price-card p {
 @media print {
 
     body {
-        background: white;
+        background: #ffffff !important;
+        color: #111111 !important;
         padding: 0;
     }
 
@@ -518,6 +660,8 @@ body.dark-mode .price-card p {
         max-width: none;
         margin: 0;
         padding: 0;
+        background: #ffffff !important;
+        color: #111111 !important;
         box-shadow: none;
     }
 
@@ -525,7 +669,6 @@ body.dark-mode .price-card p {
     .container > .intro,
     .container > .date-info,
     .form-section,
-    .container > button,
     .premium-box,
     .controls,
     .preview-title {
@@ -536,7 +679,7 @@ body.dark-mode .price-card p {
         margin: 0;
     }
 
-    .resume-card {
+    #resume .resume-card {
         min-height: 100vh;
         box-shadow: none;
         border-radius: 0;
@@ -556,7 +699,6 @@ body.dark-mode .price-card p {
 
     .container {
         padding: 18px;
-        border-radius: 14px;
     }
 
     .container > h1 {
@@ -574,11 +716,11 @@ body.dark-mode .price-card p {
     }
 
     .resume-name h1 {
-        font-size: 28px;
+        font-size: 30px;
     }
 
     .resume-name h3 {
-        font-size: 18px;
+        font-size: 19px;
     }
 
     .pricing-container {
@@ -589,207 +731,8 @@ body.dark-mode .price-card p {
         transform: none;
     }
 
-    .premium-box {
-        padding: 18px;
-    }
-
     button {
         width: 100%;
         margin-right: 0;
     }
-}
-/* ==========================================
-   LIVE PREVIEW - BIGGER & CLEARER TEXT
-========================================== */
-
-#resume .resume-card {
-    font-size: 17px !important;
-}
-
-#resume .resume-name h1 {
-    font-size: 42px !important;
-    margin-bottom: 10px !important;
-}
-
-#resume .resume-name h3 {
-    font-size: 23px !important;
-}
-
-#resume .resume-name p {
-    font-size: 17px !important;
-}
-
-#resume .resume-card section h2 {
-    font-size: 24px !important;
-    margin-top: 28px !important;
-}
-
-#resume .resume-card section p,
-#resume .resume-card section li {
-    font-size: 17px !important;
-    line-height: 1.7 !important;
-}
-
-#resume .resume-card ul {
-    font-size: 17px !important;
-}
-
-#resume .resume-card a {
-    font-size: 17px !important;
-}
-/* ==========================================
-   RESUME PREVIEW - COMPLETE CONTENT FIX
-========================================== */
-
-#resume .resume-card {
-    width: 100% !important;
-    min-height: 1000px !important;
-    padding: 45px !important;
-    font-size: 18px !important;
-    line-height: 1.7 !important;
-    overflow: visible !important;
-}
-
-/* Name */
-#resume .resume-name h1 {
-    font-size: 44px !important;
-    margin: 0 0 8px 0 !important;
-}
-
-#resume .resume-name h3 {
-    font-size: 24px !important;
-    margin: 5px 0 10px 0 !important;
-}
-
-#resume .resume-name p {
-    font-size: 18px !important;
-    margin: 5px 0 !important;
-}
-
-/* Every section */
-#resume .resume-card section {
-    display: block !important;
-    width: 100% !important;
-    margin-top: 30px !important;
-    padding: 0 !important;
-}
-
-#resume .resume-card section h2 {
-    display: block !important;
-    font-size: 25px !important;
-    margin: 0 0 12px 0 !important;
-    padding-bottom: 7px !important;
-}
-
-#resume .resume-card section p {
-    display: block !important;
-    font-size: 18px !important;
-    line-height: 1.8 !important;
-    margin: 8px 0 !important;
-}
-
-/* Skills */
-#resume .resume-card section ul {
-    display: block !important;
-    margin: 8px 0 !important;
-    padding-left: 30px !important;
-}
-
-#resume .resume-card section li {
-    display: list-item !important;
-    font-size: 18px !important;
-    line-height: 1.8 !important;
-    margin: 5px 0 !important;
-}
-
-/* Links */
-#resume .resume-card section a {
-    font-size: 18px !important;
-    word-break: break-word !important;
-}
-
-/* Photo */
-#resume .resume-photo {
-    width: 120px !important;
-    height: 120px !important;
-    object-fit: cover !important;
-    border-radius: 50% !important;
-}
-
-/* Header */
-#resume .resume-header {
-    width: 100% !important;
-    min-height: 130px !important;
-}
-
-
-/* ==========================================
-   MOBILE
-========================================== */
-
-@media (max-width: 600px) {
-
-    #resume .resume-card {
-        padding: 25px !important;
-        min-height: auto !important;
-        font-size: 16px !important;
-    }
-
-    #resume .resume-name h1 {
-        font-size: 32px !important;
-    }
-
-    #resume .resume-name h3 {
-        font-size: 20px !important;
-    }
-
-    #resume .resume-card section h2 {
-        font-size: 21px !important;
-    }
-
-    #resume .resume-card section p,
-    #resume .resume-card section li {
-        font-size: 16px !important;
-        line-height: 1.7 !important;
-    }
-}
-/* ===== LIGHT MODE - RESUME TEXT CLEAR ===== */
-
-body:not(.dark-mode) #resume .resume-card {
-    color: #111111 !important;
-    opacity: 1 !important;
-}
-
-body:not(.dark-mode) #resume .resume-card h1,
-body:not(.dark-mode) #resume .resume-card h2,
-body:not(.dark-mode) #resume .resume-card h3,
-body:not(.dark-mode) #resume .resume-card p,
-body:not(.dark-mode) #resume .resume-card li,
-body:not(.dark-mode) #resume .resume-card strong {
-    color: #111111 !important;
-    opacity: 1 !important;
-}
-
-body:not(.dark-mode) #resume .resume-card a {
-    opacity: 1 !important;
-}
-/* LIGHT MODE - MAKE ALL RESUME TEXT CLEAR */
-
-body:not(.dark-mode) #resume .resume-card,
-body:not(.dark-mode) #resume .resume-card h1,
-body:not(.dark-mode) #resume .resume-card h2,
-body:not(.dark-mode) #resume .resume-card h3,
-body:not(.dark-mode) #resume .resume-card p,
-body:not(.dark-mode) #resume .resume-card li,
-body:not(.dark-mode) #resume .resume-card strong {
-    opacity: 1 !important;
-}
-
-/* Clear text for every template */
-body:not(.dark-mode) #resume .classic-template,
-body:not(.dark-mode) #resume .modern-template,
-body:not(.dark-mode) #resume .professional-template,
-body:not(.dark-mode) #resume .creative-template,
-body:not(.dark-mode) #resume .minimal-template {
-    opacity: 1 !important;
 }
