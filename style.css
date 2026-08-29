@@ -499,3 +499,189 @@ button:hover {
 #resume.dark.professional a {
     color: #00e5ff !important;
 }
+/* ================================
+   RESUME TEMPLATES
+================================ */
+
+.resume-card {
+    background: white;
+    color: #222;
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    transition: 0.3s;
+}
+
+.resume-card section {
+    margin-top: 22px;
+}
+
+.resume-card section h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 6px;
+}
+
+.resume-card a {
+    color: #1769aa;
+}
+
+
+/* CLASSIC */
+
+.classic-template {
+    border-left: 6px solid #333;
+}
+
+
+/* MODERN */
+
+.modern-template {
+    border-left: 8px solid #2563eb;
+}
+
+.modern-template .resume-name h1 {
+    color: #2563eb;
+}
+
+.modern-template section h2 {
+    color: #2563eb;
+}
+
+
+/* PROFESSIONAL */
+
+.professional-template {
+    border-top: 7px solid #111827;
+}
+
+.professional-template .resume-name h1 {
+    color: #111827;
+}
+
+
+/* CREATIVE */
+
+.creative-template {
+    border: 3px solid #7c3aed;
+    border-radius: 20px;
+}
+
+.creative-template .resume-name h1 {
+    color: #7c3aed;
+}
+
+
+/* MINIMAL */
+
+.minimal-template {
+    border: none;
+    box-shadow: none;
+}
+
+.minimal-template .resume-name h1 {
+    font-weight: 500;
+}
+
+
+/* ================================
+   DARK MODE
+================================ */
+
+body.dark-mode {
+    background: #111827;
+    color: #eee;
+}
+
+body.dark-mode .container {
+    background: #1f2937;
+    color: #eee;
+}
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+    background: #111827;
+    color: #eee;
+    border-color: #4b5563;
+}
+
+body.dark-mode label,
+body.dark-mode .intro,
+body.dark-mode .date-info {
+    color: #eee;
+}
+
+body.dark-mode .resume-card {
+    background: #20252d;
+    color: #eee;
+    border-color: #414856;
+}
+
+body.dark-mode .resume-name h1 {
+    color: white;
+}
+
+body.dark-mode .resume-name h3 {
+    color: #b8c0cc;
+}
+
+body.dark-mode .resume-name p {
+    color: #b5bdc9;
+}
+
+body.dark-mode .resume-card section h2 {
+    color: #55a0ff;
+    border-color: #414856;
+}
+
+body.dark-mode .resume-card a {
+    color: #55a0ff;
+}
+
+
+/* PREMIUM */
+
+body.dark-mode .premium-box {
+    background: #251c31;
+    color: white;
+    border-color: #a86cff;
+}
+
+body.dark-mode .premium-box > p {
+    color: #c8bdd5;
+}
+
+body.dark-mode .premium-features p {
+    border-color: #4b3b5d;
+}
+
+body.dark-mode .price-card {
+    background: #20252d;
+    color: white;
+    border-color: #414856;
+}
+
+body.dark-mode .price-card p {
+    color: #bbb;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+    .resume-card {
+        padding: 22px;
+    }
+
+    .pricing-container {
+        flex-direction: column;
+    }
+
+    .best-plan {
+        transform: none;
+    }
+
+}
