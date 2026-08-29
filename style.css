@@ -753,3 +753,23 @@ body.dark-mode .price-card p {
         line-height: 1.7 !important;
     }
 }
+/* ===== LIGHT MODE - RESUME TEXT CLEAR ===== */
+
+body:not(.dark-mode) #resume .resume-card {
+    color: #111111 !important;
+    opacity: 1 !important;
+}
+
+body:not(.dark-mode) #resume .resume-card h1,
+body:not(.dark-mode) #resume .resume-card h2,
+body:not(.dark-mode) #resume .resume-card h3,
+body:not(.dark-mode) #resume .resume-card p,
+body:not(.dark-mode) #resume .resume-card li,
+body:not(.dark-mode) #resume .resume-card strong {
+    color: #111111 !important;
+    opacity: 1 !important;
+}
+
+body:not(.dark-mode) #resume .resume-card a {
+    opacity: 1 !important;
+}
