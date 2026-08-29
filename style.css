@@ -852,3 +852,26 @@ body.dark-mode #resume .resume-card section h2 {
 #resume .minimal-template {
     background: #fafafa !important;
 }
+/* =========================================
+   LIVE RESUME PREVIEW - FULL BOX THEME
+========================================= */
+
+#resume .resume-card.classic-template {
+    background: #ffffff !important;
+}
+
+#resume .resume-card.modern-template {
+    background: #eaf2ff !important;
+}
+
+#resume .resume-card.professional-template {
+    background: #eef1f5 !important;
+}
+
+#resume .resume-card.creative-template {
+    background: #f7edff !important;
+}
+
+#resume .resume-card.minimal-template {
+    background: #fafafa !important;
+}
