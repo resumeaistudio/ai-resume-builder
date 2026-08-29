@@ -706,3 +706,31 @@ body.dark-mode .price-card p {
     border: none !important;
     box-shadow: none !important;
 }
+/* ================================
+   TEMPLATE NAME COLORS
+================================ */
+
+/* Classic */
+#resume .classic-template .resume-name h1 {
+    color: #222 !important;
+}
+
+/* Modern */
+#resume .modern-template .resume-name h1 {
+    color: #2563eb !important;
+}
+
+/* Professional */
+#resume .professional-template .resume-name h1 {
+    color: #111827 !important;
+}
+
+/* Creative */
+#resume .creative-template .resume-name h1 {
+    color: #7c3aed !important;
+}
+
+/* Minimal */
+#resume .minimal-template .resume-name h1 {
+    color: #333 !important;
+}
