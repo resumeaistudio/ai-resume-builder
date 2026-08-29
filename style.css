@@ -685,3 +685,24 @@ body.dark-mode .price-card p {
     }
 
 }
+#resume .classic-template {
+    border-left: 6px solid #333 !important;
+}
+
+#resume .modern-template {
+    border-left: 8px solid #2563eb !important;
+}
+
+#resume .professional-template {
+    border-top: 7px solid #111827 !important;
+}
+
+#resume .creative-template {
+    border: 3px solid #7c3aed !important;
+    border-radius: 20px !important;
+}
+
+#resume .minimal-template {
+    border: none !important;
+    box-shadow: none !important;
+}
