@@ -637,3 +637,119 @@ body.dark-mode .price-card p {
 #resume .resume-card a {
     font-size: 17px !important;
 }
+/* ==========================================
+   RESUME PREVIEW - COMPLETE CONTENT FIX
+========================================== */
+
+#resume .resume-card {
+    width: 100% !important;
+    min-height: 1000px !important;
+    padding: 45px !important;
+    font-size: 18px !important;
+    line-height: 1.7 !important;
+    overflow: visible !important;
+}
+
+/* Name */
+#resume .resume-name h1 {
+    font-size: 44px !important;
+    margin: 0 0 8px 0 !important;
+}
+
+#resume .resume-name h3 {
+    font-size: 24px !important;
+    margin: 5px 0 10px 0 !important;
+}
+
+#resume .resume-name p {
+    font-size: 18px !important;
+    margin: 5px 0 !important;
+}
+
+/* Every section */
+#resume .resume-card section {
+    display: block !important;
+    width: 100% !important;
+    margin-top: 30px !important;
+    padding: 0 !important;
+}
+
+#resume .resume-card section h2 {
+    display: block !important;
+    font-size: 25px !important;
+    margin: 0 0 12px 0 !important;
+    padding-bottom: 7px !important;
+}
+
+#resume .resume-card section p {
+    display: block !important;
+    font-size: 18px !important;
+    line-height: 1.8 !important;
+    margin: 8px 0 !important;
+}
+
+/* Skills */
+#resume .resume-card section ul {
+    display: block !important;
+    margin: 8px 0 !important;
+    padding-left: 30px !important;
+}
+
+#resume .resume-card section li {
+    display: list-item !important;
+    font-size: 18px !important;
+    line-height: 1.8 !important;
+    margin: 5px 0 !important;
+}
+
+/* Links */
+#resume .resume-card section a {
+    font-size: 18px !important;
+    word-break: break-word !important;
+}
+
+/* Photo */
+#resume .resume-photo {
+    width: 120px !important;
+    height: 120px !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+}
+
+/* Header */
+#resume .resume-header {
+    width: 100% !important;
+    min-height: 130px !important;
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+    #resume .resume-card {
+        padding: 25px !important;
+        min-height: auto !important;
+        font-size: 16px !important;
+    }
+
+    #resume .resume-name h1 {
+        font-size: 32px !important;
+    }
+
+    #resume .resume-name h3 {
+        font-size: 20px !important;
+    }
+
+    #resume .resume-card section h2 {
+        font-size: 21px !important;
+    }
+
+    #resume .resume-card section p,
+    #resume .resume-card section li {
+        font-size: 16px !important;
+        line-height: 1.7 !important;
+    }
+}
