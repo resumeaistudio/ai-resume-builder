@@ -598,3 +598,42 @@ body.dark-mode .price-card p {
         margin-right: 0;
     }
 }
+/* ==========================================
+   LIVE PREVIEW - BIGGER & CLEARER TEXT
+========================================== */
+
+#resume .resume-card {
+    font-size: 17px !important;
+}
+
+#resume .resume-name h1 {
+    font-size: 42px !important;
+    margin-bottom: 10px !important;
+}
+
+#resume .resume-name h3 {
+    font-size: 23px !important;
+}
+
+#resume .resume-name p {
+    font-size: 17px !important;
+}
+
+#resume .resume-card section h2 {
+    font-size: 24px !important;
+    margin-top: 28px !important;
+}
+
+#resume .resume-card section p,
+#resume .resume-card section li {
+    font-size: 17px !important;
+    line-height: 1.7 !important;
+}
+
+#resume .resume-card ul {
+    font-size: 17px !important;
+}
+
+#resume .resume-card a {
+    font-size: 17px !important;
+}
