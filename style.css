@@ -1,58 +1,75 @@
+/* ==========================================
+   RESUMEAI - MAIN STYLE
+========================================== */
+
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #eef4ff, #f8fbff);
-    color: #1f2937;
-    min-height: 100vh;
+    padding: 25px 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f2f4f8;
+    color: #222;
 }
 
 .container {
-    width: min(92%, 720px);
-    margin: 40px auto;
-    background: #ffffff;
-    padding: 32px;
-    border-radius: 20px;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.container > h1 {
     text-align: center;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    margin-bottom: 8px;
+    font-size: 38px;
 }
 
-h1 {
+.intro {
+    text-align: center;
+    color: #666;
     margin-top: 0;
-    margin-bottom: 28px;
-    color: #2563eb;
-    font-size: 34px;
 }
 
-label {
-    display: block;
-    margin-top: 15px;
-    color: #374151;
+.date-info {
+    text-align: center;
+    margin: 18px 0 25px;
+    font-weight: bold;
+}
+
+
+/* ==========================================
+   FORM
+========================================== */
+
+.form-section {
+    margin-bottom: 25px;
+    padding: 20px;
+    border: 1px solid #e1e5eb;
+    border-radius: 12px;
+    background: #fafbfc;
+}
+
+.form-section h2 {
+    margin-top: 0;
+    font-size: 20px;
 }
 
 input,
 textarea,
 select {
     width: 100%;
-    padding: 13px 15px;
-    margin: 7px 0;
-    border: 1px solid #d1d5db;
-    border-radius: 10px;
+    margin: 8px 0;
+    padding: 13px;
+    border: 1px solid #ccd2da;
+    border-radius: 8px;
     font-size: 15px;
-    background: #ffffff;
-    color: #111827;
-    outline: none;
-    transition: 0.2s;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    font-family: inherit;
 }
 
 textarea {
@@ -60,532 +77,342 @@ textarea {
     resize: vertical;
 }
 
-input[type="file"] {
-    padding: 10px;
-    background: #f8fafc;
+select {
+    cursor: pointer;
 }
+
+
+/* ==========================================
+   BUTTONS
+========================================== */
 
 button {
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
     padding: 12px 18px;
-    margin: 8px 4px;
-    background: #2563eb;
-    color: white;
+    margin: 6px 4px 6px 0;
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.2s;
+    background: #2563eb;
+    color: white;
 }
 
 button:hover {
-    background: #1d4ed8;
-    transform: translateY(-1px);
+    opacity: 0.9;
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+
+/* ==========================================
+   PREMIUM
+========================================== */
+
+.premium-box {
+    margin-top: 30px;
+    padding: 25px;
+    border: 2px solid #a855f7;
+    border-radius: 16px;
+    background: #faf5ff;
+}
+
+.premium-box h2 {
+    margin-top: 0;
+    color: #7c3aed;
+}
+
+.premium-box > p {
+    color: #555;
+}
+
+.premium-features {
+    margin: 20px 0;
+}
+
+.premium-features p {
+    margin: 8px 0;
+    padding: 9px;
+    border-bottom: 1px solid #eadcf7;
+}
+
+.pricing-container {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.price-card {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+}
+
+.price-card h2 {
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+.price-card p {
+    color: #666;
+}
+
+.price-card button {
+    width: 100%;
+}
+
+.best-plan {
+    border: 3px solid #a855f7;
+    transform: scale(1.03);
+}
+
+.best-plan > span {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #a855f7;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* ==========================================
+   LIVE PREVIEW
+========================================== */
+
+.preview-title {
+    text-align: center;
+    margin-top: 40px;
 }
 
 #resume {
-    margin-top: 30px;
-    padding: 28px;
-    text-align: left;
-    background: white;
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+/* ==========================================
+   RESUME CARD BASE
+========================================== */
+
+.resume-card {
+    width: 100%;
+    min-height: 900px;
+    padding: 40px;
     border-radius: 14px;
-    border-top: 4px solid #2563eb;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    transition: 0.3s;
 }
 
-#resume h2 {
-    text-align: center;
-    color: #2563eb;
-    margin-bottom: 15px;
+.resume-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 30px;
 }
 
-#resume img {
-    display: block;
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    margin: 15px auto;
-    border-radius: 50%;
-    border: 4px solid #2563eb;
+.resume-name h1 {
+    margin: 0 0 8px;
+    font-size: 36px;
 }
 
-#resume p {
-    font-size: 16px;
+.resume-name h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+}
+
+.resume-name p {
+    margin: 0;
+}
+
+.resume-card section {
+    margin-top: 25px;
+}
+
+.resume-card section h2 {
+    font-size: 21px;
+    margin-bottom: 10px;
+    padding-bottom: 7px;
+    border-bottom: 2px solid;
+}
+
+.resume-card section p {
     line-height: 1.6;
-    margin: 8px 0;
 }
 
-#resume a {
-    color: #2563eb;
-    word-break: break-word;
+.resume-card ul {
+    padding-left: 22px;
 }
 
-/* Classic Template */
-
-.classic {
-    background: #ffffff;
-    color: #111827;
-    border: 2px solid #111827;
-}
-
-/* Modern Template */
-
-.modern {
-    background: #eff6ff;
-    color: #111827;
-    border: 3px solid #2563eb;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15);
-}
-
-.modern h2 {
-    color: #1d4ed8;
-    text-align: center;
-}
-
-.modern p,
-.modern li,
-.modern strong,
-.modern a {
-    color: #111827;
-}
-
-.modern img {
-    border-color: #2563eb;
-}
-
-/* Professional Template */
-
-.professional {
-    background: #f9fafb;
-    color: #111827;
-    border-left: 6px solid #111827;
-    border-radius: 8px;
-}
-
-.professional h2 {
-    color: #111827;
-    border-bottom: 2px solid #111827;
-    padding-bottom: 8px;
-}
-
-/* Dark Mode */
-
-.dark {
-    background: #121212 !important;
-    color: #ffffff !important;
-}
-
-.dark h2,
-.dark strong {
-    color: #00e5ff;
-}
-
-.dark a {
-    color: #00e5ff;
-}
-
-.dark p,
-.dark li {
-    color: #ffffff;
-}
-
-#resume.dark {
-    background: #1e1e1e;
-    color: #ffffff;
-    border-color: #00bfff;
-}
-
-#resume.dark h2 {
-    color: #00bfff;
-}
-
-#resume.dark a {
-    color: #00bfff;
-}
-
-/* Mobile */
-
-@media (max-width: 600px) {
-
-    .container {
-        width: 94%;
-        margin: 20px auto;
-        padding: 20px;
-        border-radius: 15px;
-    }
-
-    h1 {
-        font-size: 27px;
-    }
-
-    input,
-    textarea,
-    select {
-        font-size: 14px;
-    }
-
-    button {
-        width: 100%;
-        margin: 6px 0;
-    }
-
-    #resume {
-        padding: 20px;
-    }
-
-    #resume p {
-        font-size: 15px;
-    }
-}
-
-/* Printing */
-
-@media print {
-
-    button {
-        display: none !important;
-    }
-
-    body {
-        background: white;
-    }
-
-    .container {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        box-shadow: none;
-    }
-
-    #resume {
-        box-shadow: none;
-        border: none;
-        margin: 0;
-    }
-}
-/* ===== Resume Template Enhancements ===== */
-
-#resume.classic {
-    font-family: Georgia, "Times New Roman", serif;
-    background: #ffffff;
-    color: #222222;
-    border: 1px solid #222222;
-    border-top: 7px solid #222222;
-}
-
-#resume.classic h2 {
-    color: #222222;
-    font-size: 30px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-#resume.modern {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #eff6ff, #ffffff);
-    border: none;
-    border-top: 7px solid #2563eb;
-}
-
-#resume.modern h2 {
-    color: #2563eb;
-    font-size: 32px;
-    letter-spacing: 1px;
-}
-
-#resume.professional {
-    font-family: Arial, sans-serif;
-    background: #ffffff;
-    color: #1f2937;
-    border: none;
-    border-left: 8px solid #111827;
-    border-radius: 5px;
-}
-
-#resume.professional h2 {
-    color: #111827;
-    text-align: left;
-    font-size: 30px;
-    border-bottom: 2px solid #111827;
-    padding-bottom: 10px;
-}
-
-/* Better links */
-
-#resume a {
-    font-weight: bold;
-    text-decoration: none;
-}
-
-#resume a:hover {
-    text-decoration: underline;
-}
-
-/* Better lists */
-
-#resume li {
+.resume-card li {
     margin: 6px 0;
     line-height: 1.5;
 }
 
-/* Better mobile resume */
-
-@media (max-width: 600px) {
-
-    #resume.classic h2,
-    #resume.modern h2,
-    #resume.professional h2 {
-        font-size: 24px;
-    }
-
-    #resume img {
-        width: 100px;
-        height: 100px;
-    }
-}
-/* ===== Professional Resume Sections ===== */
-
-#resume {
-    line-height: 1.6;
-}
-
-#resume p strong {
-    color: #374151;
-}
-
-#resume ul {
-    padding-left: 25px;
-    margin-top: 5px;
-    margin-bottom: 18px;
-}
-
-#resume li {
-    margin-bottom: 7px;
-}
-
-/* Section spacing */
-
-#resume p strong:first-child {
-    font-weight: 700;
-}
-
-/* GitHub & LinkedIn */
-
-#resume a {
-    color: #2563eb;
-    font-weight: 600;
-    word-break: break-word;
-}
-
-#resume a:hover {
-    text-decoration: underline;
-}
-
-/* Classic */
-
-#resume.classic p strong {
-    color: #222222;
-}
-
-#resume.classic a {
-    color: #222222;
-}
-
-/* Modern */
-
-#resume.modern p strong {
-    color: #1d4ed8;
-}
-
-#resume.modern a {
-    color: #1d4ed8;
-}
-
-/* Professional */
-
-#resume.professional p strong {
-    color: #111827;
-}
-
-#resume.professional a {
-    color: #111827;
-}
-
-/* Resume print */
-
-@media print {
-
-    #resume {
-        width: 100%;
-        margin: 0;
-        padding: 25px;
-        box-shadow: none !important;
-    }
-
-    #resume a {
-        color: #000000 !important;
-        text-decoration: none;
-    }
-}
-/* Dark Mode Text Fix */
-
-#resume.dark,
-#resume.dark p,
-#resume.dark li,
-#resume.dark strong,
-#resume.dark h2,
-#resume.dark h3 {
-    color: #ffffff;
-}
-
-#resume.dark a {
-    color: #00e5ff;
-}
-
-#resume.dark {
-    background: #1e1e1e;
-}
-
-#resume.dark hr {
-    border-color: #555555;
-}
-#resume.dark.classic p,
-#resume.dark.classic li,
-#resume.dark.classic strong,
-#resume.dark.professional p,
-#resume.dark.professional li,
-#resume.dark.professional strong {
-    color: #ffffff !important;
-}
-
-#resume.dark.classic h2,
-#resume.dark.professional h2 {
-    color: #00e5ff !important;
-}
-
-#resume.dark.classic {
-    background: #1e1e1e !important;
-    color: #ffffff !important;
-}
-
-#resume.dark.professional {
-    background: #1e1e1e !important;
-    color: #ffffff !important;
-}
-/* FINAL DARK MODE FIX */
-
-#resume.dark.classic,
-#resume.dark.modern,
-#resume.dark.professional {
-    background: #1e1e1e !important;
-    color: #ffffff !important;
-}
-
-#resume.dark.classic *,
-#resume.dark.modern *,
-#resume.dark.professional * {
-    color: #ffffff !important;
-}
-
-#resume.dark.classic h2,
-#resume.dark.modern h2,
-#resume.dark.professional h2 {
-    color: #00e5ff !important;
-}
-
-#resume.dark.classic a,
-#resume.dark.modern a,
-#resume.dark.professional a {
-    color: #00e5ff !important;
-}
-/* ================================
-   RESUME TEMPLATES
-================================ */
-
-.resume-card {
-    background: white;
-    color: #222;
-    padding: 35px;
-    border-radius: 12px;
-    border: 1px solid #ddd;
-    transition: 0.3s;
-}
-
-.resume-card section {
-    margin-top: 22px;
-}
-
-.resume-card section h2 {
-    border-bottom: 2px solid #333;
-    padding-bottom: 6px;
-}
-
 .resume-card a {
-    color: #1769aa;
+    text-decoration: none;
 }
 
 
-/* CLASSIC */
+/* ==========================================
+   CLASSIC TEMPLATE
+========================================== */
 
-.classic-template {
+#resume .classic-template {
+    background: #ffffff !important;
+    color: #222;
+    border: 1px solid #333;
+}
+
+#resume .classic-template .resume-header {
+    background: #f0f0f0;
+    padding: 25px;
     border-left: 6px solid #333;
 }
 
-
-/* MODERN */
-
-.modern-template {
-    border-left: 8px solid #2563eb;
+#resume .classic-template section h2 {
+    color: #222;
+    border-color: #333;
 }
 
-.modern-template .resume-name h1 {
+
+/* ==========================================
+   MODERN TEMPLATE
+========================================== */
+
+#resume .modern-template {
+    background: #eaf2ff !important;
+    color: #172033;
+    border: 3px solid #2563eb;
+}
+
+#resume .modern-template .resume-header {
+    background: #2563eb;
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+#resume .modern-template .resume-name h1,
+#resume .modern-template .resume-name h3,
+#resume .modern-template .resume-name p {
+    color: white;
+}
+
+#resume .modern-template section {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 18px;
+    border-radius: 10px;
+}
+
+#resume .modern-template section h2 {
     color: #2563eb;
-}
-
-.modern-template section h2 {
-    color: #2563eb;
+    border-color: #2563eb;
 }
 
 
-/* PROFESSIONAL */
+/* ==========================================
+   PROFESSIONAL TEMPLATE
+========================================== */
 
-.professional-template {
-    border-top: 7px solid #111827;
+#resume .professional-template {
+    background: #eef1f5 !important;
+    color: #172033;
+    border: 3px solid #1f2937;
 }
 
-.professional-template .resume-name h1 {
-    color: #111827;
+#resume .professional-template .resume-header {
+    background: #1f2937;
+    color: white;
+    padding: 30px;
+}
+
+#resume .professional-template .resume-name h1,
+#resume .professional-template .resume-name h3,
+#resume .professional-template .resume-name p {
+    color: white;
+}
+
+#resume .professional-template section {
+    background: white;
+    padding: 18px;
+}
+
+#resume .professional-template section h2 {
+    color: #1f2937;
+    border-color: #1f2937;
 }
 
 
-/* CREATIVE */
+/* ==========================================
+   CREATIVE TEMPLATE
+========================================== */
 
-.creative-template {
-    border: 3px solid #7c3aed;
-    border-radius: 20px;
+#resume .creative-template {
+    background: #f7edff !important;
+    color: #302044;
+    border: 3px solid #9333ea;
+    border-radius: 22px;
 }
 
-.creative-template .resume-name h1 {
-    color: #7c3aed;
+#resume .creative-template .resume-header {
+    background: #9333ea;
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+#resume .creative-template .resume-name h1,
+#resume .creative-template .resume-name h3,
+#resume .creative-template .resume-name p {
+    color: white;
+}
+
+#resume .creative-template section {
+    background: white;
+    padding: 18px;
+    border-radius: 12px;
+}
+
+#resume .creative-template section h2 {
+    color: #9333ea;
+    border-color: #a855f7;
 }
 
 
-/* MINIMAL */
+/* ==========================================
+   MINIMAL TEMPLATE
+========================================== */
 
-.minimal-template {
+#resume .minimal-template {
+    background: #fafafa !important;
+    color: #333;
     border: none;
     box-shadow: none;
 }
 
-.minimal-template .resume-name h1 {
-    font-weight: 500;
+#resume .minimal-template .resume-header {
+    background: #fafafa;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+#resume .minimal-template section h2 {
+    color: #555;
+    border-color: #ddd;
 }
 
 
-/* ================================
+/* ==========================================
    DARK MODE
-================================ */
+========================================== */
 
 body.dark-mode {
     background: #111827;
@@ -597,6 +424,11 @@ body.dark-mode .container {
     color: #eee;
 }
 
+body.dark-mode .form-section {
+    background: #18212d;
+    border-color: #374151;
+}
+
 body.dark-mode input,
 body.dark-mode textarea,
 body.dark-mode select {
@@ -605,41 +437,41 @@ body.dark-mode select {
     border-color: #4b5563;
 }
 
-body.dark-mode label,
 body.dark-mode .intro,
 body.dark-mode .date-info {
+    color: #ddd;
+}
+
+
+/* Dark resume themes */
+
+body.dark-mode #resume .classic-template {
+    background: #252525 !important;
     color: #eee;
 }
 
-body.dark-mode .resume-card {
-    background: #20252d;
+body.dark-mode #resume .modern-template {
+    background: #172554 !important;
     color: #eee;
-    border-color: #414856;
 }
 
-body.dark-mode .resume-name h1 {
-    color: white;
+body.dark-mode #resume .professional-template {
+    background: #1e293b !important;
+    color: #eee;
 }
 
-body.dark-mode .resume-name h3 {
-    color: #b8c0cc;
+body.dark-mode #resume .creative-template {
+    background: #3b1f4a !important;
+    color: #eee;
 }
 
-body.dark-mode .resume-name p {
-    color: #b5bdc9;
-}
-
-body.dark-mode .resume-card section h2 {
-    color: #55a0ff;
-    border-color: #414856;
-}
-
-body.dark-mode .resume-card a {
-    color: #55a0ff;
+body.dark-mode #resume .minimal-template {
+    background: #252525 !important;
+    color: #eee;
 }
 
 
-/* PREMIUM */
+/* Premium dark mode */
 
 body.dark-mode .premium-box {
     background: #251c31;
@@ -647,8 +479,12 @@ body.dark-mode .premium-box {
     border-color: #a86cff;
 }
 
+body.dark-mode .premium-box h2 {
+    color: #c084fc;
+}
+
 body.dark-mode .premium-box > p {
-    color: #c8bdd5;
+    color: #ddd;
 }
 
 body.dark-mode .premium-features p {
@@ -666,14 +502,83 @@ body.dark-mode .price-card p {
 }
 
 
-/* ================================
+/* ==========================================
+   PRINT / PDF
+========================================== */
+
+@media print {
+
+    body {
+        background: white;
+        padding: 0;
+    }
+
+    .container {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    .container > h1,
+    .container > .intro,
+    .container > .date-info,
+    .form-section,
+    .container > button,
+    .premium-box,
+    .controls,
+    .preview-title {
+        display: none !important;
+    }
+
+    #resume {
+        margin: 0;
+    }
+
+    .resume-card {
+        min-height: 100vh;
+        box-shadow: none;
+        border-radius: 0;
+    }
+}
+
+
+/* ==========================================
    MOBILE
-================================ */
+========================================== */
 
 @media (max-width: 600px) {
 
+    body {
+        padding: 10px 6px;
+    }
+
+    .container {
+        padding: 18px;
+        border-radius: 14px;
+    }
+
+    .container > h1 {
+        font-size: 28px;
+    }
+
     .resume-card {
         padding: 22px;
+        min-height: auto;
+    }
+
+    .resume-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .resume-name h1 {
+        font-size: 28px;
+    }
+
+    .resume-name h3 {
+        font-size: 18px;
     }
 
     .pricing-container {
@@ -684,308 +589,12 @@ body.dark-mode .price-card p {
         transform: none;
     }
 
-}
-#resume .classic-template {
-    border-left: 6px solid #333 !important;
-}
-
-#resume .modern-template {
-    border-left: 8px solid #2563eb !important;
-}
-
-#resume .professional-template {
-    border-top: 7px solid #111827 !important;
-}
-
-#resume .creative-template {
-    border: 3px solid #7c3aed !important;
-    border-radius: 20px !important;
-}
-
-#resume .minimal-template {
-    border: none !important;
-    box-shadow: none !important;
-}
-/* ================================
-   TEMPLATE NAME COLORS
-================================ */
-
-/* Classic */
-#resume .classic-template .resume-name h1 {
-    color: #222 !important;
-}
-
-/* Modern */
-#resume .modern-template .resume-name h1 {
-    color: #2563eb !important;
-}
-
-/* Professional */
-#resume .professional-template .resume-name h1 {
-    color: #111827 !important;
-}
-
-/* Creative */
-#resume .creative-template .resume-name h1 {
-    color: #7c3aed !important;
-}
-
-/* Minimal */
-#resume .minimal-template .resume-name h1 {
-    color: #333 !important;
-}
-/* ================================
-   RESUME INNER THEMES
-================================ */
-
-/* CLASSIC */
-#resume .classic-template {
-    background: #ffffff !important;
-    color: #222 !important;
-}
-
-#resume .classic-template section h2 {
-    color: #222 !important;
-    border-color: #222 !important;
-}
-
-
-/* MODERN */
-#resume .modern-template {
-    background: #f4f8ff !important;
-    color: #172033 !important;
-}
-
-#resume .modern-template section h2 {
-    color: #2563eb !important;
-    border-color: #2563eb !important;
-}
-
-#resume .modern-template .resume-name h1 {
-    color: #2563eb !important;
-}
-
-
-/* PROFESSIONAL */
-#resume .professional-template {
-    background: #f3f5f8 !important;
-    color: #172033 !important;
-}
-
-#resume .professional-template section h2 {
-    color: #172033 !important;
-    border-color: #172033 !important;
-}
-
-#resume .professional-template .resume-name h1 {
-    color: #172033 !important;
-}
-
-
-/* CREATIVE */
-#resume .creative-template {
-    background: #faf5ff !important;
-    color: #302044 !important;
-}
-
-#resume .creative-template section h2 {
-    color: #7c3aed !important;
-    border-color: #a855f7 !important;
-}
-
-#resume .creative-template .resume-name h1 {
-    color: #7c3aed !important;
-}
-
-
-/* MINIMAL */
-#resume .minimal-template {
-    background: #ffffff !important;
-    color: #333 !important;
-}
-
-#resume .minimal-template section h2 {
-    color: #555 !important;
-    border-color: #ddd !important;
-}
-
-#resume .minimal-template .resume-name h1 {
-    color: #333 !important;
-}
-
-
-/* DARK MODE */
-body.dark-mode #resume .resume-card {
-    color: #eeeeee !important;
-}
-
-body.dark-mode #resume .classic-template,
-body.dark-mode #resume .modern-template,
-body.dark-mode #resume .professional-template,
-body.dark-mode #resume .creative-template,
-body.dark-mode #resume .minimal-template {
-    background: #20252d !important;
-}
-
-body.dark-mode #resume .resume-card section h2 {
-    color: #55a0ff !important;
-    border-color: #414856 !important;
-}
-/* ===== LIVE RESUME PREVIEW FULL BACKGROUND ===== */
-
-#resume .classic-template {
-    background: #ffffff !important;
-}
-
-#resume .modern-template {
-    background: #eaf2ff !important;
-}
-
-#resume .professional-template {
-    background: #eef1f5 !important;
-}
-
-#resume .creative-template {
-    background: #f7edff !important;
-}
-
-#resume .minimal-template {
-    background: #fafafa !important;
-}
-/* =========================================
-   LIVE RESUME PREVIEW - FULL BOX THEME
-========================================= */
-
-#resume .resume-card.classic-template {
-    background: #ffffff !important;
-}
-
-#resume .resume-card.modern-template {
-    background: #eaf2ff !important;
-}
-
-#resume .resume-card.professional-template {
-    background: #eef1f5 !important;
-}
-
-#resume .resume-card.creative-template {
-    background: #f7edff !important;
-}
-
-#resume .resume-card.minimal-template {
-    background: #fafafa !important;
-}
-/* ==========================================
-   RESUMEAI - REAL TEMPLATE THEMES
-========================================== */
-
-/* ---------- CLASSIC ---------- */
-
-#resume .classic-template {
-    background: #ffffff !important;
-    border: 1px solid #333 !important;
-}
-
-#resume .classic-template .resume-header {
-    background: #f1f1f1 !important;
-    padding: 20px !important;
-}
-
-
-/* ---------- MODERN ---------- */
-
-#resume .modern-template {
-    background: #eef5ff !important;
-    border: 3px solid #2563eb !important;
-}
-
-#resume .modern-template .resume-header {
-    background: #2563eb !important;
-    padding: 25px !important;
-}
-
-#resume .modern-template .resume-header h1,
-#resume .modern-template .resume-header h3,
-#resume .modern-template .resume-header p {
-    color: white !important;
-}
-
-#resume .modern-template section {
-    background: #ffffff !important;
-    padding: 15px !important;
-    margin-top: 15px !important;
-    border-radius: 8px !important;
-}
-
-
-/* ---------- PROFESSIONAL ---------- */
-
-#resume .professional-template {
-    background: #f1f4f8 !important;
-    border: 3px solid #1f2937 !important;
-}
-
-#resume .professional-template .resume-header {
-    background: #1f2937 !important;
-    padding: 25px !important;
-}
-
-#resume .professional-template .resume-header h1,
-#resume .professional-template .resume-header h3,
-#resume .professional-template .resume-header p {
-    color: white !important;
-}
-
-#resume .professional-template section {
-    background: #ffffff !important;
-    padding: 15px !important;
-    margin-top: 15px !important;
-}
-
-
-/* ---------- CREATIVE ---------- */
-
-#resume .creative-template {
-    background: #fbf4ff !important;
-    border: 3px solid #9333ea !important;
-    border-radius: 20px !important;
-}
-
-#resume .creative-template .resume-header {
-    background: #9333ea !important;
-    padding: 25px !important;
-    border-radius: 15px !important;
-}
-
-#resume .creative-template .resume-header h1,
-#resume .creative-template .resume-header h3,
-#resume .creative-template .resume-header p {
-    color: white !important;
-}
-
-#resume .creative-template section {
-    background: #ffffff !important;
-    padding: 15px !important;
-    margin-top: 15px !important;
-    border-radius: 12px !important;
-}
-
-
-/* ---------- MINIMAL ---------- */
-
-#resume .minimal-template {
-    background: #fafafa !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
-#resume .minimal-template .resume-header {
-    background: #fafafa !important;
-    padding: 15px !important;
-}
-
-#resume .minimal-template section {
-    background: transparent !important;
-    padding: 8px !important;
-    margin-top: 12px !important;
+    .premium-box {
+        padding: 18px;
+    }
+
+    button {
+        width: 100%;
+        margin-right: 0;
+    }
 }
