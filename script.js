@@ -1,8 +1,14 @@
-// ================================
+// ==========================================
+// ResumeAi - FINAL SCRIPT
+// ==========================================
+
+
+// ==========================================
 // LIVE DATE
-// ================================
+// ==========================================
 
 function updateLiveDate() {
+
     const dateElement = document.getElementById("liveDate");
 
     if (!dateElement) return;
@@ -17,74 +23,117 @@ function updateLiveDate() {
 }
 
 
-// ================================
-// AI SUMMARY
-// ================================
+// ==========================================
+// GET FORM DATA
+// ==========================================
 
-function generateAI() {
+function getResumeData() {
 
-    const name = document.getElementById("name")?.value.trim() || "";
-    const jobTitle = document.getElementById("jobTitle")?.value.trim() || "";
-    const education = document.getElementById("education")?.value.trim() || "";
-    const skills = document.getElementById("skills")?.value.trim() || "";
-    const experience = document.getElementById("experience")?.value.trim() || "";
+    return {
 
-    const summary = document.getElementById("summary");
+        name: document.getElementById("name")?.value.trim() || "",
 
-    if (!summary) return;
+        email: document.getElementById("email")?.value.trim() || "",
 
-    if (
-        experience.toLowerCase().includes("fresher") ||
-        experience === ""
-    ) {
-        summary.value =
-            `Motivated ${jobTitle || "professional"} and enthusiastic fresher with a background in ${education || "education"} and knowledge of ${skills || "modern technologies"}. Eager to learn, contribute and grow professionally.`;
-    } else {
-        summary.value =
-            `Experienced ${jobTitle || "professional"} with practical experience and strong skills in ${skills || "relevant technologies"}. A dedicated and results-oriented professional focused on delivering quality work and continuous growth.`;
-    }
+        phone: document.getElementById("phone")?.value.trim() || "",
 
-    updateLivePreview();
+        jobTitle: document.getElementById("jobTitle")?.value.trim() || "",
+
+        education: document.getElementById("education")?.value.trim() || "",
+
+        skills: document.getElementById("skills")?.value.trim() || "",
+
+        experience: document.getElementById("experience")?.value.trim() || "",
+
+        summary: document.getElementById("summary")?.value.trim() || "",
+
+        projects: document.getElementById("projects")?.value.trim() || "",
+
+        languages: document.getElementById("languages")?.value.trim() || "",
+
+        github: document.getElementById("github")?.value.trim() || "",
+
+        linkedin: document.getElementById("linkedin")?.value.trim() || "",
+
+        template: document.getElementById("template")?.value || "classic"
+
+    };
+
 }
 
 
-// ================================
+// ==========================================
+// AI SUMMARY
+// ==========================================
+
+function generateAI() {
+
+    const data = getResumeData();
+
+    const summaryBox = document.getElementById("summary");
+
+    if (!summaryBox) return;
+
+
+    if (data.experience.toLowerCase().includes("fresher")) {
+
+        summaryBox.value =
+            `Motivated ${data.jobTitle || "professional"} and enthusiastic fresher with knowledge of ${data.skills || "modern technologies"}. Educational background in ${data.education || "relevant studies"}. Eager to learn, contribute and grow professionally.`;
+
+    } else {
+
+        summaryBox.value =
+            `Experienced ${data.jobTitle || "professional"} with practical experience in ${data.skills || "relevant technologies"}. Dedicated to delivering quality results, solving problems and continuously improving professional skills.`;
+
+    }
+
+
+    createResumePreview();
+
+}
+
+
+// ==========================================
 // GENERATE RESUME
-// ================================
+// ==========================================
 
 function generateResume() {
 
-    const name = document.getElementById("name")?.value.trim();
-    const email = document.getElementById("email")?.value.trim();
-    const phone = document.getElementById("phone")?.value.trim();
-    const jobTitle = document.getElementById("jobTitle")?.value.trim();
-    const education = document.getElementById("education")?.value.trim();
-    const skills = document.getElementById("skills")?.value.trim();
-    const experience = document.getElementById("experience")?.value.trim();
-    const summary = document.getElementById("summary")?.value.trim();
-    const projects = document.getElementById("projects")?.value.trim();
-    const languages = document.getElementById("languages")?.value.trim();
-    const github = document.getElementById("github")?.value.trim();
-    const linkedin = document.getElementById("linkedin")?.value.trim();
+    const data = getResumeData();
 
-    const resume = document.getElementById("resume");
 
-    if (!resume) return;
+    if (!data.name) {
 
-    if (!name || !email || !phone) {
-
-        alert("Please fill Name, Email and Phone Number.");
+        alert("Please enter your Full Name.");
 
         return;
     }
 
+
+    if (!data.email) {
+
+        alert("Please enter your Email.");
+
+        return;
+    }
+
+
+    if (!data.phone) {
+
+        alert("Please enter your Phone Number.");
+
+        return;
+    }
+
+
     createResumePreview();
+
 }
 
 
-// ================================
+// ==========================================
 // CREATE RESUME PREVIEW
-// ================================
+// ==========================================
 
 function createResumePreview() {
 
@@ -92,86 +141,247 @@ function createResumePreview() {
 
     if (!resume) return;
 
-    const name = document.getElementById("name")?.value.trim() || "";
-    const email = document.getElementById("email")?.value.trim() || "";
-    const phone = document.getElementById("phone")?.value.trim() || "";
-    const jobTitle = document.getElementById("jobTitle")?.value.trim() || "";
-    const education = document.getElementById("education")?.value.trim() || "";
-    const skills = document.getElementById("skills")?.value.trim() || "";
-    const experience = document.getElementById("experience")?.value.trim() || "";
-    const summary = document.getElementById("summary")?.value.trim() || "";
-    const projects = document.getElementById("projects")?.value.trim() || "";
-    const languages = document.getElementById("languages")?.value.trim() || "";
-    const github = document.getElementById("github")?.value.trim() || "";
-    const linkedin = document.getElementById("linkedin")?.value.trim() || "";
-    const template = document.getElementById("template")?.value || "classic";
+
+    const data = getResumeData();
+
+
+    // Skills
 
     let skillsHTML = "";
 
-    if (skills) {
+    if (data.skills) {
 
-        skillsHTML = skills
+        skillsHTML = data.skills
             .split(",")
-            .map(skill => `<li>${escapeHTML(skill.trim())}</li>`)
+            .map(function(skill) {
+
+                return `<li>${escapeHTML(skill.trim())}</li>`;
+
+            })
             .join("");
 
     }
+
+
+    // Projects
 
     let projectsHTML = "";
 
-    if (projects) {
+    if (data.projects) {
 
-        projectsHTML = projects
+        projectsHTML = data.projects
             .split(",")
-            .map(project => `<li>${escapeHTML(project.trim())}</li>`)
+            .map(function(project) {
+
+                return `<li>${escapeHTML(project.trim())}</li>`;
+
+            })
             .join("");
 
     }
 
-    let linksHTML = "";
 
-    if (github) {
+    // Profiles
 
-        linksHTML += `
+    let profilesHTML = "";
+
+
+    if (data.github) {
+
+        profilesHTML += `
             <p>
-                <b>GitHub:</b>
-                <a href="${escapeAttribute(github)}" target="_blank">
-                    ${escapeHTML(github)}
+                <strong>GitHub:</strong>
+                <a href="${escapeAttribute(data.github)}"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    ${escapeHTML(data.github)}
                 </a>
             </p>
         `;
 
     }
 
-    if (linkedin) {
 
-        linksHTML += `
+    if (data.linkedin) {
+
+        profilesHTML += `
             <p>
-                <b>LinkedIn:</b>
-                <a href="${escapeAttribute(linkedin)}" target="_blank">
-                    ${escapeHTML(linkedin)}
+                <strong>LinkedIn:</strong>
+                <a href="${escapeAttribute(data.linkedin)}"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    ${escapeHTML(data.linkedin)}
                 </a>
             </p>
         `;
 
     }
+
+
+    // Photo
+
+    let photoHTML = "";
+
+
+    const photoInput =
+        document.getElementById("photo");
+
+
+    if (
+        photoInput &&
+        photoInput.files &&
+        photoInput.files[0]
+    ) {
+
+        const photoURL =
+            URL.createObjectURL(photoInput.files[0]);
+
+
+        photoHTML = `
+            <img
+                class="resume-photo"
+                src="${photoURL}"
+                alt="Profile Photo">
+        `;
+
+    }
+
+
+    // Sections
+
+    const educationHTML =
+        data.education
+        ?
+        `
+            <section>
+                <h2>Education</h2>
+                <p>${escapeHTML(data.education)}</p>
+            </section>
+        `
+        :
+        "";
+
+
+    const skillsSection =
+        skillsHTML
+        ?
+        `
+            <section>
+                <h2>Skills</h2>
+                <ul>
+                    ${skillsHTML}
+                </ul>
+            </section>
+        `
+        :
+        "";
+
+
+    const experienceHTML =
+        data.experience
+        ?
+        `
+            <section>
+                <h2>Experience</h2>
+                <p>${escapeHTML(data.experience)}</p>
+            </section>
+        `
+        :
+        "";
+
+
+    const summaryHTML =
+        data.summary
+        ?
+        `
+            <section>
+                <h2>Professional Summary</h2>
+                <p>${escapeHTML(data.summary)}</p>
+            </section>
+        `
+        :
+        "";
+
+
+    const projectsSection =
+        projectsHTML
+        ?
+        `
+            <section>
+                <h2>Projects</h2>
+                <ul>
+                    ${projectsHTML}
+                </ul>
+            </section>
+        `
+        :
+        "";
+
+
+    const languagesHTML =
+        data.languages
+        ?
+        `
+            <section>
+                <h2>Languages</h2>
+                <p>${escapeHTML(data.languages)}</p>
+            </section>
+        `
+        :
+        "";
+
+
+    const profilesSection =
+        profilesHTML
+        ?
+        `
+            <section>
+                <h2>Profiles</h2>
+                ${profilesHTML}
+            </section>
+        `
+        :
+        "";
+
+
+    // ==========================================
+    // FINAL RESUME
+    // ==========================================
 
     resume.innerHTML = `
 
-        <div class="resume-card ${template}-template">
+        <div class="resume-card ${escapeAttribute(data.template)}-template">
 
             <div class="resume-header">
 
+                ${photoHTML}
+
                 <div class="resume-name">
 
-                    <h1>${escapeHTML(name)}</h1>
+                    <h1>
+                        ${escapeHTML(data.name)}
+                    </h1>
 
-                    <h3>${escapeHTML(jobTitle)}</h3>
+                    ${
+                        data.jobTitle
+                        ?
+                        `<h3>${escapeHTML(data.jobTitle)}</h3>`
+                        :
+                        ""
+                    }
 
                     <p>
-                        ${escapeHTML(email)}
-                        ${email && phone ? " | " : ""}
-                        ${escapeHTML(phone)}
+                        ${escapeHTML(data.email)}
+
+                        ${
+                            data.email && data.phone
+                            ?
+                            " | "
+                            :
+                            ""
+                        }
+
+                        ${escapeHTML(data.phone)}
                     </p>
 
                 </div>
@@ -179,187 +389,79 @@ function createResumePreview() {
             </div>
 
 
-            ${
-                summary
-                ?
-                `
-                <section>
+            ${summaryHTML}
 
-                    <h2>Professional Summary</h2>
+            ${educationHTML}
 
-                    <p>
-                        ${escapeHTML(summary)}
-                    </p>
+            ${skillsSection}
 
-                </section>
-                `
-                :
-                ""
-            }
+            ${experienceHTML}
 
+            ${projectsSection}
 
-            ${
-                education
-                ?
-                `
-                <section>
+            ${languagesHTML}
 
-                    <h2>Education</h2>
-
-                    <p>
-                        ${escapeHTML(education)}
-                    </p>
-
-                </section>
-                `
-                :
-                ""
-            }
-
-
-            ${
-                skillsHTML
-                ?
-                `
-                <section>
-
-                    <h2>Skills</h2>
-
-                    <ul>
-                        ${skillsHTML}
-                    </ul>
-
-                </section>
-                `
-                :
-                ""
-            }
-
-
-            ${
-                experience
-                ?
-                `
-                <section>
-
-                    <h2>Experience</h2>
-
-                    <p>
-                        ${escapeHTML(experience)}
-                    </p>
-
-                </section>
-                `
-                :
-                ""
-            }
-
-
-            ${
-                projectsHTML
-                ?
-                `
-                <section>
-
-                    <h2>Projects</h2>
-
-                    <ul>
-                        ${projectsHTML}
-                    </ul>
-
-                </section>
-                `
-                :
-                ""
-            }
-
-
-            ${
-                languages
-                ?
-                `
-                <section>
-
-                    <h2>Languages</h2>
-
-                    <p>
-                        ${escapeHTML(languages)}
-                    </p>
-
-                </section>
-                `
-                :
-                ""
-            }
-
-
-            ${
-                linksHTML
-                ?
-                `
-                <section>
-
-                    <h2>Profiles</h2>
-
-                    ${linksHTML}
-
-                </section>
-                `
-                :
-                ""
-            }
+            ${profilesSection}
 
         </div>
+
     `;
 
 }
 
 
-// ================================
+// ==========================================
 // LIVE PREVIEW
-// ================================
+// ==========================================
 
 function updateLivePreview() {
 
-    const resume = document.getElementById("resume");
+    const data = getResumeData();
+
+    const resume =
+        document.getElementById("resume");
 
     if (!resume) return;
 
-    const name = document.getElementById("name")?.value.trim() || "";
 
-    if (!name) {
+    if (!data.name) {
 
         resume.innerHTML = "";
 
         return;
+
     }
 
+
     createResumePreview();
+
 }
 
 
-// ================================
+// ==========================================
 // DARK MODE
-// ================================
+// ==========================================
 
 function darkMode() {
 
     document.body.classList.toggle("dark-mode");
 
-    const enabled =
+
+    const isDark =
         document.body.classList.contains("dark-mode");
+
 
     localStorage.setItem(
         "resumeAiDarkMode",
-        enabled ? "true" : "false"
+        isDark ? "true" : "false"
     );
 
 }
 
 
-// ================================
+// ==========================================
 // CLEAR FORM
-// ================================
+// ==========================================
 
 function clearForm() {
 
@@ -380,6 +482,7 @@ function clearForm() {
 
     ];
 
+
     fields.forEach(function(id) {
 
         const element =
@@ -393,8 +496,10 @@ function clearForm() {
 
     });
 
+
     const photo =
         document.getElementById("photo");
+
 
     if (photo) {
 
@@ -402,8 +507,10 @@ function clearForm() {
 
     }
 
+
     const resume =
         document.getElementById("resume");
+
 
     if (resume) {
 
@@ -414,71 +521,95 @@ function clearForm() {
 }
 
 
-// ================================
+// ==========================================
 // DOWNLOAD PDF
-// ================================
+// ==========================================
 
 function downloadPDF() {
 
     const resume =
         document.getElementById("resume");
 
-    if (!resume || !resume.innerHTML.trim()) {
 
-        alert("Resume preview is empty!");
+    if (
+        !resume ||
+        !resume.innerHTML.trim()
+    ) {
+
+        alert(
+            "Please generate your resume first."
+        );
 
         return;
 
     }
+
 
     window.print();
 
 }
 
 
-// ================================
+// ==========================================
 // PREMIUM
-// ================================
+// ==========================================
 
 let selectedPremiumPlan = null;
+
 
 function selectPlan(plan, price) {
 
     selectedPremiumPlan = {
 
         plan: plan,
+
         price: price
 
     };
 
+
     localStorage.setItem(
+
         "resumeAiPremium",
+
         JSON.stringify(selectedPremiumPlan)
+
     );
 
+
     alert(
+
         "💎 ResumeAi Premium\n\n" +
+
         "Plan: " +
         plan +
+
         "\nPrice: ₹" +
         price +
+
         "\n\nPremium plan selected successfully!"
+
     );
 
 }
 
 
-// ================================
-// SECURITY HELPERS
-// ================================
+// ==========================================
+// SECURITY
+// ==========================================
 
 function escapeHTML(value) {
 
     return String(value)
+
         .replace(/&/g, "&amp;")
+
         .replace(/</g, "&lt;")
+
         .replace(/>/g, "&gt;")
+
         .replace(/"/g, "&quot;")
+
         .replace(/'/g, "&#039;");
 
 }
@@ -487,28 +618,44 @@ function escapeHTML(value) {
 function escapeAttribute(value) {
 
     return String(value)
+
+        .replace(/&/g, "&amp;")
+
         .replace(/"/g, "&quot;")
+
         .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;");
+
+        .replace(/>/g, "&gt;")
+
+        .replace(/'/g, "&#039;");
 
 }
 
 
-// ================================
+// ==========================================
 // PAGE LOAD
-// ================================
+// ==========================================
 
 document.addEventListener(
+
     "DOMContentLoaded",
-    function () {
+
+    function() {
+
+
+        // Date
 
         updateLiveDate();
 
-        // Restore dark mode
+
+        // Dark mode
 
         if (
-            localStorage.getItem("resumeAiDarkMode")
-            === "true"
+
+            localStorage.getItem(
+                "resumeAiDarkMode"
+            ) === "true"
+
         ) {
 
             document.body.classList.add(
@@ -518,12 +665,13 @@ document.addEventListener(
         }
 
 
-        // Restore premium plan
+        // Premium plan
 
         const savedPlan =
             localStorage.getItem(
                 "resumeAiPremium"
             );
+
 
         if (savedPlan) {
 
@@ -541,7 +689,7 @@ document.addEventListener(
         }
 
 
-        // Live preview inputs
+        // Live preview
 
         const inputIds = [
 
@@ -562,10 +710,11 @@ document.addEventListener(
         ];
 
 
-        inputIds.forEach(function (id) {
+        inputIds.forEach(function(id) {
 
             const element =
                 document.getElementById(id);
+
 
             if (!element) return;
 
@@ -589,6 +738,7 @@ document.addEventListener(
         const photo =
             document.getElementById("photo");
 
+
         if (photo) {
 
             photo.addEventListener(
@@ -602,12 +752,18 @@ document.addEventListener(
         updateLivePreview();
 
     }
+
 );
 
 
-// Update date every minute
+// ==========================================
+// UPDATE DATE EVERY MINUTE
+// ==========================================
 
 setInterval(
+
     updateLiveDate,
+
     60000
+
 );
