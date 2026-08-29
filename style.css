@@ -773,3 +773,23 @@ body:not(.dark-mode) #resume .resume-card strong {
 body:not(.dark-mode) #resume .resume-card a {
     opacity: 1 !important;
 }
+/* LIGHT MODE - MAKE ALL RESUME TEXT CLEAR */
+
+body:not(.dark-mode) #resume .resume-card,
+body:not(.dark-mode) #resume .resume-card h1,
+body:not(.dark-mode) #resume .resume-card h2,
+body:not(.dark-mode) #resume .resume-card h3,
+body:not(.dark-mode) #resume .resume-card p,
+body:not(.dark-mode) #resume .resume-card li,
+body:not(.dark-mode) #resume .resume-card strong {
+    opacity: 1 !important;
+}
+
+/* Clear text for every template */
+body:not(.dark-mode) #resume .classic-template,
+body:not(.dark-mode) #resume .modern-template,
+body:not(.dark-mode) #resume .professional-template,
+body:not(.dark-mode) #resume .creative-template,
+body:not(.dark-mode) #resume .minimal-template {
+    opacity: 1 !important;
+}
