@@ -831,3 +831,24 @@ body.dark-mode #resume .resume-card section h2 {
     color: #55a0ff !important;
     border-color: #414856 !important;
 }
+/* ===== LIVE RESUME PREVIEW FULL BACKGROUND ===== */
+
+#resume .classic-template {
+    background: #ffffff !important;
+}
+
+#resume .modern-template {
+    background: #eaf2ff !important;
+}
+
+#resume .professional-template {
+    background: #eef1f5 !important;
+}
+
+#resume .creative-template {
+    background: #f7edff !important;
+}
+
+#resume .minimal-template {
+    background: #fafafa !important;
+}
